@@ -10,8 +10,9 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_margin="8dp"
+        android:layout_weight="1"
         android:padding="8dp"
         android:text="TextView"
         android:textAppearance="@android:style/TextAppearance.Material.Display1" />
@@ -19,14 +20,16 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_margin="16dp"
+        android:layout_weight="1"
         android:text="TextView" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="Click me!" />
 
 </LinearLayout>
