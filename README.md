@@ -1,4 +1,4 @@
-# learning-android
+# Learning Android
 This repo will cover building an Android app from scratch.
 
 # Advantage of view binding
