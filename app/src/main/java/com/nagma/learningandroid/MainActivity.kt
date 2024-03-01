@@ -3,6 +3,7 @@ package com.nagma.learningandroid
 import android.app.Activity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.nagma.learningandroid.databinding.ActivityMainBinding
@@ -30,5 +31,8 @@ class MainActivity : Activity() {
         button.text = "Click me!"
         binding.myLayout.addView(button)
 //        my_layout.addView(button)
+        val button1 = Button(this)
+        button1.text = "Click me!"
+        findViewById<LinearLayout>(R.id.my_layout).addView(button1)
     }
  }
