@@ -2,6 +2,7 @@ package com.nagma.learningandroid
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -17,23 +18,14 @@ class MainActivity : Activity() {
         var view = binding.root
         setContentView(view)
 
-        addSomeView(3)
-    }
+        binding.button.setOnClickListener {
+            val email = binding.editTextTextEmailAddress.text.toString()
+            val password = binding.editTextTextPassword.text.toString()
 
-    fun addSomeView(count: Int) {
-        for (i in 1..count) {
-            val textView = TextView(this)
-            textView.text = "Hey learner #$i"
-            textView.textSize = 20f
-            binding.myLayout.addView(textView)
-//            my_layout.addView(textView)
+            Log.i("Login Page", "onCreate: emai: $email, password: $password")
         }
-        val button = Button(this)
-        button.text = getString(R.string.click_me)
-        binding.myLayout.addView(button)
-//        my_layout.addView(button)
-        val button1 = Button(this)
-        button1.text = "Click me!"
-        findViewById<LinearLayout>(R.id.my_layout).addView(button1)
+
+
+
     }
  }
