@@ -13,13 +13,14 @@ class MainActivity : Activity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        var view = binding.root
+        setContentView(view)
+
         addSomeView(3)
     }
 
     fun addSomeView(count: Int) {
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
         for (i in 1..count) {
             val textView = TextView(this)
             textView.text = "Hey learner #$i"
