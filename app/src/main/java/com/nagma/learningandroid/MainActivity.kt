@@ -29,7 +29,7 @@ class MainActivity : Activity() {
 //            my_layout.addView(textView)
         }
         val button = Button(this)
-        button.text = "Click me!"
+        button.text = getString(R.string.click_me)
         binding.myLayout.addView(button)
 //        my_layout.addView(button)
         val button1 = Button(this)
