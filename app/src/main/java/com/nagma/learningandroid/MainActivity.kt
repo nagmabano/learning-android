@@ -19,10 +19,10 @@ class MainActivity : Activity() {
         setContentView(view)
 
         binding.button.setOnClickListener {
-            val email = binding.editTextTextEmailAddress.text.toString()
-            val password = binding.editTextTextPassword.text.toString()
+            val email = binding.emailAddress.text.toString()
+            val password = binding.password.text.toString()
 
-            Log.i("Login Page", "onCreate: emai: $email, password: $password")
+            Log.i("Login Page", "onCreate: email: $email, password: $password")
         }
 
 
