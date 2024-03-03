@@ -22,7 +22,7 @@ class MainActivity : Activity() {
             val email = binding.emailAddress.text.toString()
             val password = binding.password.text.toString()
 
-            Log.i("Login Page", "onCreate: email: $email, password: $password")
+//            Log.i("Login Page", "onCreate: email: $email, password: $password")
         }
 
 
