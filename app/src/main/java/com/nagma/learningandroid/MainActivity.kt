@@ -20,6 +20,14 @@ class MainActivity : Activity() {
         var view = binding.root
         setContentView(view)
 
+        binding.hotpotSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                binding.hotpotImage.setImageResource(R.drawable.logo)
+            } else {
+                binding.hotpotImage.setImageResource(R.drawable.ic_launcher_foreground)
+            }
+        }
+
 //        binding.button.setOnClickListener {
 //            val email = binding.emailAddress.text.toString()
 //            val password = binding.password.text.toString()

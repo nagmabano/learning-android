@@ -5,4 +5,5 @@
     <string name="password_label">Your Password</string>
     <string name="button_label">Submit</string>
     <string name="message_text">Email: %s, Password: %s</string>
+    <string name="switch_label">Display Image\n</string>
 </resources>
