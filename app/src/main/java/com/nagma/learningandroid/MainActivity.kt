@@ -5,10 +5,12 @@ import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import coil.api.load
 import com.google.android.material.snackbar.Snackbar
 import com.nagma.learningandroid.databinding.ActivityMainBinding
 
@@ -29,9 +31,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.hotpotSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                binding.hotpotImage.setImageResource(R.drawable.logo)
+//                binding.hotpotImage.setImageResource(R.drawable.logo)
+                binding.hotpotImage.load("https://cdn.pixabay.com/photo/2016/03/08/20/03/flag-1244648_1280.jpg")
             } else {
-                binding.hotpotImage.setImageResource(R.drawable.ic_launcher_foreground)
+//                binding.hotpotImage.setImageResource(R.drawable.ic_launcher_foreground)
+                binding.hotpotImage.load("https://cdn.pixabay.com/photo/2013/03/01/18/40/crispus-87928_1280.jpg")
             }
         }
 
