@@ -1,5 +1,6 @@
 package com.nagma.learningandroid
 
+import android.app.ActionBar
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.nagma.learningandroid.databinding.ActivityMainBinding
 
-class MainActivity : Activity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,12 @@ class MainActivity : Activity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         var view = binding.root
         setContentView(view)
+
+        supportActionBar?.let {
+            it.setDisplayShowHomeEnabled(true)
+            it.setDisplayUseLogoEnabled(true)
+            it.setLogo(R.drawable.ic_img_clip_art)
+        }
 
         binding.hotpotSwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
