@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.nagma.learningandroid.databinding.ActivityMainBinding
 
@@ -21,8 +22,11 @@ class MainActivity : Activity() {
         binding.button.setOnClickListener {
             val email = binding.emailAddress.text.toString()
             val password = binding.password.text.toString()
+            val message = getString(R.string.message_text, email, password)
 
-//            Log.i("Login Page", "onCreate: email: $email, password: $password")
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+            Log.i("Login Page", message)
         }
 
 

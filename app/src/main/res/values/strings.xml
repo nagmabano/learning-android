@@ -4,4 +4,5 @@
     <string name="email_address_label">Your Email Address</string>
     <string name="password_label">Your Password</string>
     <string name="button_label">Submit</string>
+    <string name="message_text">Email: %s, Password: %s</string>
 </resources>
