@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.let {
             it.setDisplayShowHomeEnabled(true)
             it.setDisplayUseLogoEnabled(true)
-            it.setLogo(R.drawable.ic_img_clip_art)
+            it.setLogo(R.drawable.ic_img_clip_art )
         }
 
         binding.hotpotSwitch.setOnCheckedChangeListener { _, isChecked ->
