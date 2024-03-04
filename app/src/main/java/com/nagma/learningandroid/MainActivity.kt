@@ -20,18 +20,18 @@ class MainActivity : Activity() {
         var view = binding.root
         setContentView(view)
 
-        binding.button.setOnClickListener {
-            val email = binding.emailAddress.text.toString()
-            val password = binding.password.text.toString()
-            val message = getString(R.string.message_text, email, password)
-
-            Snackbar.make(it, "I am a snackbar!",
-                Snackbar.LENGTH_INDEFINITE)
-                .setAction("Show Info"){showMessage(message)}
-                .show()
-
-            Log.i("Login Page", message)
-        }
+//        binding.button.setOnClickListener {
+//            val email = binding.emailAddress.text.toString()
+//            val password = binding.password.text.toString()
+//            val message = getString(R.string.message_text, email, password)
+//
+//            Snackbar.make(it, "I am a snackbar!",
+//                Snackbar.LENGTH_INDEFINITE)
+//                .setAction("Show Info"){showMessage(message)}
+//                .show()
+//
+//            Log.i("Login Page", message)
+//        }
 
 
 
