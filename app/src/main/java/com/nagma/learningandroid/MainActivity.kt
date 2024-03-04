@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.nagma.learningandroid.databinding.ActivityMainBinding
 
 class MainActivity : Activity() {
@@ -24,7 +25,10 @@ class MainActivity : Activity() {
             val password = binding.password.text.toString()
             val message = getString(R.string.message_text, email, password)
 
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            Snackbar.make(it, "I am a snackbar!",
+                Snackbar.LENGTH_INDEFINITE)
+                .setAction("Show Info"){showMessage(message)}
+                .show()
 
             Log.i("Login Page", message)
         }
@@ -32,4 +36,8 @@ class MainActivity : Activity() {
 
 
     }
- }
+
+    private fun showMessage(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+}
