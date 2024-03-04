@@ -23,21 +23,21 @@ class MainActivity : AppCompatActivity() {
         var view = binding.root
         setContentView(view)
 
-        supportActionBar?.let {
-            it.setDisplayShowHomeEnabled(true)
-            it.setDisplayUseLogoEnabled(true)
-            it.setLogo(R.drawable.ic_img_clip_art )
-        }
+//        supportActionBar?.let {
+//            it.setDisplayShowHomeEnabled(true)
+//            it.setDisplayUseLogoEnabled(true)
+//            it.setLogo(R.drawable.ic_img_clip_art )
+//        }
 
-        binding.hotpotSwitch.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-//                binding.hotpotImage.setImageResource(R.drawable.logo)
-                binding.hotpotImage.load("https://cdn.pixabay.com/photo/2016/03/08/20/03/flag-1244648_1280.jpg")
-            } else {
-//                binding.hotpotImage.setImageResource(R.drawable.ic_launcher_foreground)
-                binding.hotpotImage.load("https://cdn.pixabay.com/photo/2013/03/01/18/40/crispus-87928_1280.jpg")
-            }
-        }
+//        binding.hotpotSwitch.setOnCheckedChangeListener { _, isChecked ->
+//            if (isChecked) {
+////                binding.hotpotImage.setImageResource(R.drawable.logo)
+//                binding.hotpotImage.load("https://cdn.pixabay.com/photo/2016/03/08/20/03/flag-1244648_1280.jpg")
+//            } else {
+////                binding.hotpotImage.setImageResource(R.drawable.ic_launcher_foreground)
+//                binding.hotpotImage.load("https://cdn.pixabay.com/photo/2013/03/01/18/40/crispus-87928_1280.jpg")
+//            }
+//        }
 
 //        binding.button.setOnClickListener {
 //            val email = binding.emailAddress.text.toString()
