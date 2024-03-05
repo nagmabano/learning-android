@@ -16,12 +16,15 @@ import com.nagma.learningandroid.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    val LOG_TAG = "lifecycle_events"
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         var view = binding.root
         setContentView(view)
+
+        Log.i(LOG_TAG, "On Create")
 
 //        supportActionBar?.let {
 //            it.setDisplayShowHomeEnabled(true)
@@ -54,6 +57,31 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(LOG_TAG,"On Start")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(LOG_TAG, "On Resume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(LOG_TAG, "On Pause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(LOG_TAG, "On Stop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(LOG_TAG,"On Destroy")
     }
 
     private fun showMessage(message: String) {
