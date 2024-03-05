@@ -21,11 +21,20 @@ class ScrollingActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
         binding.toolbarLayout.title = title
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view!!, "Our Message", Snackbar.LENGTH_LONG).show()
-        }
 
         val viewModel by viewModels<ScrollingViewModel>()
-        viewModel.loadData()
+
+        viewModel.info.observe(this) {
+            displaySnackbar(it)
+        }
+        binding.fab.setOnClickListener { view ->
+            viewModel.loadData()
+        }
+
+
+    }
+
+    private fun displaySnackbar(count: Int) {
+        Snackbar.make(binding.root, "Current count: $count", Snackbar.LENGTH_LONG).show()
     }
 }
