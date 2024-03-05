@@ -14,7 +14,9 @@ import coil.api.load
 import com.google.android.material.snackbar.Snackbar
 import com.nagma.learningandroid.databinding.ActivityMainBinding
 
+const val LOG_TAG = "lifecycle_events"
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,40 +25,7 @@ class MainActivity : AppCompatActivity() {
         var view = binding.root
         setContentView(view)
 
-//        supportActionBar?.let {
-//            it.setDisplayShowHomeEnabled(true)
-//            it.setDisplayUseLogoEnabled(true)
-//            it.setLogo(R.drawable.ic_img_clip_art )
-//        }
+        lifecycle.addObserver(MyObserver())
 
-//        binding.hotpotSwitch.setOnCheckedChangeListener { _, isChecked ->
-//            if (isChecked) {
-////                binding.hotpotImage.setImageResource(R.drawable.logo)
-//                binding.hotpotImage.load("https://cdn.pixabay.com/photo/2016/03/08/20/03/flag-1244648_1280.jpg")
-//            } else {
-////                binding.hotpotImage.setImageResource(R.drawable.ic_launcher_foreground)
-//                binding.hotpotImage.load("https://cdn.pixabay.com/photo/2013/03/01/18/40/crispus-87928_1280.jpg")
-//            }
-//        }
-
-//        binding.button.setOnClickListener {
-//            val email = binding.emailAddress.text.toString()
-//            val password = binding.password.text.toString()
-//            val message = getString(R.string.message_text, email, password)
-//
-//            Snackbar.make(it, "I am a snackbar!",
-//                Snackbar.LENGTH_INDEFINITE)
-//                .setAction("Show Info"){showMessage(message)}
-//                .show()
-//
-//            Log.i("Login Page", message)
-//        }
-
-
-
-    }
-
-    private fun showMessage(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
