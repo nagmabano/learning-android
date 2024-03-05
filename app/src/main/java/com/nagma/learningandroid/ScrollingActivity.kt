@@ -20,10 +20,8 @@ class ScrollingActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
         binding.toolbarLayout.title = title
-        binding.fab.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(view: View?) {
-                Snackbar.make(view!!, "Our Message", Snackbar.LENGTH_LONG).show()
-            }
-        })
+        binding.fab.setOnClickListener { view ->
+            Snackbar.make(view!!, "Our Message", Snackbar.LENGTH_LONG).show()
+        }
     }
 }
