@@ -1,6 +1,7 @@
 package com.nagma.learningandroid
 
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -19,6 +20,10 @@ class ScrollingActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
         binding.toolbarLayout.title = title
-
+        binding.fab.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(view: View?) {
+                Snackbar.make(view!!, "Our Message", Snackbar.LENGTH_LONG).show()
+            }
+        })
     }
 }
