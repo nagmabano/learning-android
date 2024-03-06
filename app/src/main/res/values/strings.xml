@@ -142,4 +142,7 @@
     <string name="action_settings">Settings</string>
     <string name="enter_button_label">Enter</string>
     <string name="share_label">Share</string>
+    <string name="home_label">Home</string>
+    <string name="tour_label">Tour</string>
+    <string name="shop_label">Shop</string>
 </resources>

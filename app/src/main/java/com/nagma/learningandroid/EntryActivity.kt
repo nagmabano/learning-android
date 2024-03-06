@@ -14,7 +14,7 @@ class EntryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.entryButton.setOnClickListener {
-            val intent = Intent(this, ScrollingActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
         }
