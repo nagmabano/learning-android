@@ -1,7 +1,9 @@
 package com.nagma.learningandroid
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
 import com.google.android.material.appbar.CollapsingToolbarLayout
@@ -13,7 +15,7 @@ import com.nagma.learningandroid.databinding.ActivityScrollingBinding
 class ScrollingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityScrollingBinding
-
+    private val viewModel by viewModels<ScrollingViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,8 +24,6 @@ class ScrollingActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
         binding.toolbarLayout.title = title
-
-        val viewModel by viewModels<ScrollingViewModel>()
 
         viewModel.info.observe(this) {
             displaySnackbar(it)
@@ -43,4 +43,24 @@ class ScrollingActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.action_share -> handleShare()
+            else ->
+                super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun handleShare(): Boolean {
+        val intent = Intent().apply{
+            action = Intent.ACTION_SEND
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, "I just purchased ${viewModel.info.value} bottles!!")
+        }
+        startActivity(intent)
+        return true
+    }
+
+
 }
