@@ -1,6 +1,7 @@
 package com.nagma.learningandroid
 
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import androidx.activity.viewModels
 import com.google.android.material.appbar.CollapsingToolbarLayout
@@ -36,5 +37,10 @@ class ScrollingActivity : AppCompatActivity() {
 
     private fun displaySnackbar(count: Int) {
         Snackbar.make(binding.root, "Current count: $count", Snackbar.LENGTH_LONG).show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }
