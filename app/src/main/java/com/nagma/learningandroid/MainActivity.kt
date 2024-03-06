@@ -10,6 +10,9 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import coil.api.load
 import com.google.android.material.snackbar.Snackbar
 import com.nagma.learningandroid.databinding.ActivityMainBinding
@@ -27,5 +30,40 @@ class MainActivity : AppCompatActivity() {
 
         lifecycle.addObserver(MyObserver())
 
+        supportFragmentManager.commit { 
+            add<HomeFragment>(R.id.container, null)
+        }
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.action_home -> goToHome()
+                R.id.action_tour -> goToTour()
+                R.id.action_shop -> goToShop()
+                else -> false
+            }
+        }
+
+    }
+
+    private fun goToShop(): Boolean {
+        supportFragmentManager.commit {
+            replace<ShopFragment>(R.id.container,null,null)
+        }
+        return true
+    }
+
+    private fun goToTour(): Boolean {
+        supportFragmentManager.commit {
+            replace<TourFragment>(R.id.container,null,null)
+        }
+        return true
+    }
+
+    private fun goToHome(): Boolean {
+        supportFragmentManager.commit {
+            replace<HomeFragment>(R.id.container, null, null)
+        }
+        return true
     }
 }
+
